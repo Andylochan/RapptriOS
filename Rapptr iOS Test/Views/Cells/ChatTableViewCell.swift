@@ -24,6 +24,11 @@ class ChatTableViewCell: UITableViewCell {
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCellUI()
+    }
+    
+    private func setupCellUI() {
+
     }
     
     // MARK: - Public

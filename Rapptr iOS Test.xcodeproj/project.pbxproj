@@ -85,7 +85,6 @@
 				E9414DCC26C45ECD00512A71 /* Models */,
 				E9414DD826C4618900512A71 /* View Controllers */,
 				E9414DBF26C45CF400512A71 /* Assets.xcassets */,
-				E9414DC126C45CF400512A71 /* LaunchScreen.storyboard */,
 				E9414DC426C45CF400512A71 /* Info.plist */,
 			);
 			path = "Rapptr iOS Test";
@@ -136,6 +135,7 @@
 				E9414DDD26C4618900512A71 /* LoginViewController.xib */,
 				E9414DE026C4618900512A71 /* MenuViewController.swift */,
 				E9414DDC26C4618900512A71 /* MenuViewController.xib */,
+				E9414DC126C45CF400512A71 /* LaunchScreen.storyboard */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

@@ -36,18 +36,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         configureTable(tableView: chatTable)
         title = "Chat"
         
-        // TODO: Remove test data when we have actual data from the server loaded
-        messages?.append(Message(testName: "James", withTestMessage: "Hey Guys!"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"What's up?"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"Hey! :)"))
-        messages?.append(Message(testName:"James", withTestMessage:"Want to grab some food later?"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"Sure, time and place?"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"YAS! I am starving!!!"))
-        messages?.append(Message(testName:"James", withTestMessage:"1 hr at the Local Burger sound good?"))
-        messages?.append(Message(testName:"Paul", withTestMessage:"Sure thing"))
-        messages?.append(Message(testName:"Amy", withTestMessage:"See you there :P"))
-        
-        chatTable.reloadData()
+        loadData()
     }
     
     // MARK: - Private
@@ -56,6 +45,17 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         tableView.tableFooterView = UIView(frame: .zero)
+    }
+    
+    private func loadData() {
+        ChatClient.shared.fetchChatData { [unowned self] (fetchedMessages) in
+            messages = fetchedMessages
+            DispatchQueue.main.async {
+                chatTable.reloadData()
+            }
+        } error: { (err) in
+            print("ERROR in chatViewController:", err as Any)
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -71,11 +71,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages!.count
-    }
-    
-    // MARK: - UITableViewDelegate
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 58.0
     }
     
     // MARK: - IBAction

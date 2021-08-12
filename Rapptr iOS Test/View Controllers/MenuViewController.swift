@@ -41,11 +41,23 @@ class MenuViewController: UIViewController {
         setupUI()
     }
     
+    // MARK: - Functions
     private func setupUI() {
         let cRadius: CGFloat = 8.0
         chatButton.layer.cornerRadius = cRadius
         loginButton.layer.cornerRadius = cRadius
         animationButton.layer.cornerRadius = cRadius
+        
+        chatButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 0)
+        chatButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 38, bottom: 0, right: 0)
+        
+        loginButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 0)
+        loginButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 38, bottom: 0, right: 0)
+        
+        animationButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 22, bottom: 0, right: 0)
+        animationButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 38, bottom: 0, right: 0)
+        
+        navigationController?.navigationBar.barTintColor = UIColor(named: "HeaderColor")
     }
     
     // MARK: - Actions
