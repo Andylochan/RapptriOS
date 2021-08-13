@@ -44,6 +44,7 @@ class ChatClient {
                 completion(messages)
             } catch let jsonErr {
                 print("Error serializing json:", jsonErr)
+                errorHandler(jsonErr.localizedDescription)
             }
         }.resume()
     }

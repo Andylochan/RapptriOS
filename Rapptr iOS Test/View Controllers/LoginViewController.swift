@@ -26,6 +26,8 @@ class LoginViewController: UIViewController {
      *
      * 7) When login is successful, tapping 'OK' in the UIAlertController should bring you back to the main menu.
      **/
+    @IBOutlet weak var userTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     
     // MARK: - Properties
     private var client: LoginClient?
@@ -48,5 +50,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didPressLoginButton(_ sender: Any) {
+        LoginClient.shared.login(email: userTextfield.text ?? "", password: passwordTextfield.text ?? "") { (Response) in
+            print(Response)
+        } error: { (Error) in
+            
+        }
     }
 }

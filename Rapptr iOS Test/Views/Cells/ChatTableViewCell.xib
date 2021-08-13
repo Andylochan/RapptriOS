@@ -31,18 +31,33 @@
                                 <rect key="frame" x="57" y="0.0" width="334" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHn-U7-rWh">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="zB7-SP-AlB"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                         <color key="textColor" name="FontColorDark"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-p6-QTk">
-                                        <rect key="frame" x="0.0" y="32" width="334" height="18"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxi-oM-2Tb">
+                                        <rect key="frame" x="0.0" y="16" width="334" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-p6-QTk">
+                                                <rect key="frame" x="8" y="8" width="318" height="18"/>
+                                                <color key="backgroundColor" name="BubbleColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" name="FontColorDark"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" name="BubbleColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" name="FontColorDark"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="R4D-p6-QTk" secondAttribute="trailing" constant="8" id="0XN-Ue-hNG"/>
+                                            <constraint firstItem="R4D-p6-QTk" firstAttribute="leading" secondItem="gxi-oM-2Tb" secondAttribute="leading" constant="8" id="2eE-1q-xFw"/>
+                                            <constraint firstItem="R4D-p6-QTk" firstAttribute="top" secondItem="gxi-oM-2Tb" secondAttribute="top" constant="8" id="FhL-Ry-mVC"/>
+                                            <constraint firstAttribute="bottom" secondItem="R4D-p6-QTk" secondAttribute="bottom" constant="8" id="Sww-Uc-Ab1"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>

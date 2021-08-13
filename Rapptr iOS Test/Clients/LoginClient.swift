@@ -27,38 +27,38 @@ class LoginClient {
     static let shared = LoginClient()
     
     func login(email: String, password: String, completion: @escaping (String) -> Void, error errorHandler: @escaping (String?) -> Void) {
+        let start = CFAbsoluteTimeGetCurrent()
         
-        let jsonUrlString = "http://dev.rapptrlabs.com/Tests/scripts/login.php?email=\(email)&password=\(password)"
-        guard let url = URL(string: jsonUrlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) 
-        
+        let url = String(format: "http://dev.rapptrlabs.com/Tests/scripts/login.php")
+        guard let serviceUrl = URL(string: url) else { return }
+        let parameters: [String: Any] = [
+            "email" : email,
+            "password": password
+        ]
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            return
+        }
+        request.httpBody = httpBody
+        request.timeoutInterval = 20
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                print("res:", response.url as Any)
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    print("json:", json)
+                    completion("Complete")
+                } catch {
+                    errorHandler(error.localizedDescription)
+                }
+                let diff = CFAbsoluteTimeGetCurrent() - start
+                print("Took \(diff) seconds")
+            }
+        }.resume()
     }
 }
-//
-//func fetchChatData(completion: @escaping ([Message]) -> Void, error errorHandler: @escaping (String?) -> Void) {
-//
-//    let URLString = "http://dev.rapptrlabs.com/Tests/scripts/chat_log.php"
-//    guard let url = URL(string: URLString) else { return }
-//
-//    URLSession.shared.dataTask(with: url) { (data, response, err) in
-//        if let error = err {
-//            print("Error: \(error)")
-//            return
-//        }
-//        guard let httpResponse = response as? HTTPURLResponse,
-//              (200...299).contains(httpResponse.statusCode) else {
-//            print("Response: \(String(describing: response))")
-//            return
-//        }
-//
-//        guard let data = data else { return }
-//        do {
-//            let jsonData = try JSONDecoder().decode(Data.self, from: data)
-//            let messages = jsonData.data
-//            completion(messages)
-//        } catch let jsonErr {
-//            print("Error serializing json:", jsonErr)
-//        }
-//    }.resume()
-//}
