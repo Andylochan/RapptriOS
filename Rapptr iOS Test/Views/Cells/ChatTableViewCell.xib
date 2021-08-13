@@ -66,6 +66,7 @@
             <connections>
                 <outlet property="body" destination="R4D-p6-QTk" id="LKm-6c-fqr"/>
                 <outlet property="header" destination="NHn-U7-rWh" id="gmc-dR-cCO"/>
+                <outlet property="profileImage" destination="vIy-Sq-GpW" id="djz-Ms-nWh"/>
             </connections>
             <point key="canvasLocation" x="188" y="69.265367316341838"/>
         </tableViewCell>

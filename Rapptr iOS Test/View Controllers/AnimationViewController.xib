@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationViewController">
             <connections>
+                <outlet property="fadeButton" destination="R4X-eb-ZnV" id="CBR-VK-6FT"/>
+                <outlet property="imageView" destination="5DT-RY-uzd" id="0bc-Tf-8WR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +41,7 @@
                         <action selector="didPressFade:" destination="-1" eventType="touchUpInside" id="9GZ-O4-LtL"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-RY-uzd" userLabel="Logo Image">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-RY-uzd" userLabel="Logo Image" customClass="DraggableImage" customModule="Rapptr_iOS_Test" customModuleProvider="target">
                     <rect key="frame" x="42" y="194" width="290" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>

@@ -6,5 +6,6 @@ target 'Rapptr iOS Test' do
   use_frameworks!
 
   # Pods for Rapptr iOS Test
+  pod 'SDWebImage'
 
 end
