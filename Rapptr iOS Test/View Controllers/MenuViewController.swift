@@ -58,8 +58,10 @@ class MenuViewController: UIViewController {
         animationButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 38, bottom: 0, right: 0)
         
         navigationController?.navigationBar.barTintColor = UIColor(named: "HeaderColor")
+        navigationController?.navigationBar.tintColor = UIColor.white
         let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "  ", style: .plain, target: nil, action: nil)
     }
     
     // MARK: - Actions

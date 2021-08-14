@@ -23,6 +23,8 @@ import Foundation
  *
 */
 
+// http://dev.rapptrlabs.com/Tests/scripts/login.php?email=info@rapptrlabs.com&password=Test123
+
 class LoginClient {
     static let shared = LoginClient()
     
@@ -46,18 +48,21 @@ class LoginClient {
         let session = URLSession.shared
         session.dataTask(with: request) { (data, response, error) in
             if let response = response {
-                print("res:", response.url as Any)
+                print("res:", response)
             }
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
                     print("json:", json)
-                    completion("Complete")
+                    
+                    let diff = CFAbsoluteTimeGetCurrent() - start
+                    let diffToMilli = diff * 1000
+                    let diffFormated = String(format: "%.0f", diffToMilli)
+                    
+                    completion("\(diffFormated)")
                 } catch {
                     errorHandler(error.localizedDescription)
                 }
-                let diff = CFAbsoluteTimeGetCurrent() - start
-                print("Took \(diff) seconds")
             }
         }.resume()
     }

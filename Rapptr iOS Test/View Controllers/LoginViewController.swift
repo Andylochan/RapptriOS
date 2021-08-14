@@ -51,9 +51,19 @@ class LoginViewController: UIViewController {
     
     @IBAction func didPressLoginButton(_ sender: Any) {
         LoginClient.shared.login(email: userTextfield.text ?? "", password: passwordTextfield.text ?? "") { (Response) in
-            print(Response)
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Login Complete", message: "Request took \(Response) ms", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self.navigationController?.popToRootViewController(animated: true)
+                }))
+                self.present(alert, animated: true)
+            }
         } error: { (Error) in
-            
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Error", message: (String(describing: Error)), preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
         }
     }
 }

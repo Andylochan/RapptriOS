@@ -54,7 +54,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 chatTable.reloadData()
             }
         } error: { (err) in
-            print("ERROR in chatViewController:", err as Any)
+            print(String(describing: err))
         }
     }
     
