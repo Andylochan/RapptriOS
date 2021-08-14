@@ -7,17 +7,6 @@
 
 import Foundation
 
-/**
- * =========================================================================================
- * INSTRUCTIONS
- * =========================================================================================
- * 1) Make a request to fetch chat data used in this app.
- *
- * 2) Using the following endpoint, make a request to fetch data
- *    URL: http://dev.rapptrlabs.com/Tests/scripts/chat_log.php
- *
- */
-
 class ChatClient {
     static let shared = ChatClient()
     

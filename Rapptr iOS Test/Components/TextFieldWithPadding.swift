@@ -7,10 +7,10 @@
 
 import UIKit
 
-// MARK:-  Textfield Insets
+// MARK:- Textfield Insets
 class TextFieldWithPadding: UITextField {
     var textPadding = UIEdgeInsets(
-        top: 00,
+        top: 0,
         left: 24,
         bottom: 0,
         right: 0

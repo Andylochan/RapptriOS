@@ -69,7 +69,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" name="BackgroundColor"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="ZWc-LN-65Y" secondAttribute="bottom" constant="8" id="5aS-ps-FCP"/>
                     <constraint firstAttribute="trailing" secondItem="ZWc-LN-65Y" secondAttribute="trailing" constant="36" id="9h8-kI-NAd"/>
@@ -80,6 +80,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="body" destination="R4D-p6-QTk" id="LKm-6c-fqr"/>
+                <outlet property="bubbleView" destination="gxi-oM-2Tb" id="f00-hF-0tu"/>
                 <outlet property="header" destination="NHn-U7-rWh" id="gmc-dR-cCO"/>
                 <outlet property="profileImage" destination="vIy-Sq-GpW" id="djz-Ms-nWh"/>
             </connections>
@@ -88,9 +89,6 @@
     </objects>
     <resources>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
-        <namedColor name="BackgroundColor">
-            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="BubbleColor">
             <color red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

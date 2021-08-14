@@ -9,19 +9,11 @@ import SDWebImage
 
 class ChatTableViewCell: UITableViewCell {
     
-    /**
-     * =========================================================================================
-     * INSTRUCTIONS
-     * =========================================================================================
-     * 1) Setup cell to match mockup
-     *
-     * 2) Include user's avatar image
-     **/
-    
     // MARK: - Outlets
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var bubbleView: UIView!
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
@@ -31,6 +23,7 @@ class ChatTableViewCell: UITableViewCell {
     
     private func setupCellUI() {
         profileImage.layer.cornerRadius = profileImage.frame.height / 2
+        bubbleView.layer.cornerRadius = 8
     }
     
     // MARK: - Public

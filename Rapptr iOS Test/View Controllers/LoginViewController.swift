@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
      **/
     @IBOutlet weak var userTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Properties
     private var client: LoginClient?
@@ -36,11 +37,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Login"
+        loginButton.isEnabled = false;
+        loginButton.layer.opacity = 0.6
+        userTextfield.addTarget(self, action:  #selector(textFieldDidChange(_:)),  for:.editingChanged )
+        passwordTextfield.addTarget(self, action:  #selector(textFieldDidChange(_:)),  for:.editingChanged )
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Actions
@@ -64,6 +68,17 @@ class LoginViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true)
             }
+        }
+    }
+    
+    // MARK: - Functions
+    @objc func textFieldDidChange(_ sender: UITextField) {
+        if userTextfield.text == "" || passwordTextfield.text == "" {
+            loginButton.isEnabled = false;
+            loginButton.layer.opacity = 0.6
+        }else{
+            loginButton.isEnabled = true;
+            loginButton.layer.opacity = 1.0
         }
     }
 }

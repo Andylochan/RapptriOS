@@ -87,6 +87,17 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		14E89F4F26C8344800479D50 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				E9414DDF26C4618900512A71 /* AnimationViewController.xib */,
+				E9414DDB26C4618900512A71 /* ChatViewController.xib */,
+				E9414DDD26C4618900512A71 /* LoginViewController.xib */,
+				E9414DDC26C4618900512A71 /* MenuViewController.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
 		22F680F6EBDF445716E0D896 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,14 +136,14 @@
 		E9414DB526C45CF300512A71 /* Rapptr iOS Test */ = {
 			isa = PBXGroup;
 			children = (
-				14E89F4326C782CD00479D50 /* Components */,
-				14E89F3F26C7817800479D50 /* Extensions */,
 				E9414DB626C45CF300512A71 /* AppDelegate.swift */,
 				E9414DE926C468D700512A71 /* SceneDelegate.swift */,
 				E9414DD226C4617B00512A71 /* Views */,
 				E9414DCF26C45F9500512A71 /* Clients */,
 				E9414DCC26C45ECD00512A71 /* Models */,
 				E9414DD826C4618900512A71 /* View Controllers */,
+				14E89F4326C782CD00479D50 /* Components */,
+				14E89F3F26C7817800479D50 /* Extensions */,
 				E9414DBF26C45CF400512A71 /* Assets.xcassets */,
 				E9414DC426C45CF400512A71 /* Info.plist */,
 			);
@@ -177,14 +188,11 @@
 			isa = PBXGroup;
 			children = (
 				E9414DDA26C4618900512A71 /* AnimationViewController.swift */,
-				E9414DDF26C4618900512A71 /* AnimationViewController.xib */,
 				E9414DD926C4618900512A71 /* ChatViewController.swift */,
-				E9414DDB26C4618900512A71 /* ChatViewController.xib */,
 				E9414DDE26C4618900512A71 /* LoginViewController.swift */,
-				E9414DDD26C4618900512A71 /* LoginViewController.xib */,
 				E9414DE026C4618900512A71 /* MenuViewController.swift */,
-				E9414DDC26C4618900512A71 /* MenuViewController.xib */,
 				E9414DC126C45CF400512A71 /* LaunchScreen.storyboard */,
+				14E89F4F26C8344800479D50 /* Nibs */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
