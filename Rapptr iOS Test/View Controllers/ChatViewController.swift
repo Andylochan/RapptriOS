@@ -6,7 +6,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ChatViewController: UIViewController {
     
     // MARK: - Properties
     private var client: ChatClient?
@@ -18,17 +18,20 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         messages = [Message]()
         configureTable(tableView: chatTable)
         title = "Chat"
-        
         loadData()
+    }
+    
+    // MARK: - IBAction
+    @IBAction func backAction(_ sender: Any) {
+        let mainMenuViewController = MenuViewController()
+        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
     }
     
     // MARK: - Private
     private func configureTable(tableView: UITableView) {
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ChatTableViewCell", bundle: nil), forCellReuseIdentifier: "ChatTableViewCell")
         tableView.tableFooterView = UIView(frame: .zero)
@@ -44,8 +47,10 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             print(String(describing: err))
         }
     }
-    
-    // MARK: - UITableViewDataSource
+}
+
+// MARK: - UITableViewDataSource
+extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: ChatTableViewCell? = nil
         if cell == nil {
@@ -58,11 +63,5 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages!.count
-    }
-    
-    // MARK: - IBAction
-    @IBAction func backAction(_ sender: Any) {
-        let mainMenuViewController = MenuViewController()
-        self.navigationController?.pushViewController(mainMenuViewController, animated: true)
     }
 }

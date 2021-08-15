@@ -10,6 +10,7 @@
 		14E89F4526C782DE00479D50 /* DraggableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E89F4426C782DE00479D50 /* DraggableImage.swift */; };
 		14E89F4A26C7831700479D50 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E89F4926C7831700479D50 /* UIView+Extensions.swift */; };
 		14E89F4D26C7837400479D50 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E89F4C26C7837400479D50 /* TextFieldWithPadding.swift */; };
+		14E89F5226C9D01600479D50 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E89F5126C9D01600479D50 /* LoginResponse.swift */; };
 		BD7DADC96B5AA3B93018CF32 /* Pods_Rapptr_iOS_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25964DE8F99B0FE5CAAE12CE /* Pods_Rapptr_iOS_Test.framework */; };
 		E9414DB726C45CF300512A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9414DB626C45CF300512A71 /* AppDelegate.swift */; };
 		E9414DC026C45CF400512A71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9414DBF26C45CF400512A71 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		14E89F4426C782DE00479D50 /* DraggableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImage.swift; sourceTree = "<group>"; };
 		14E89F4926C7831700479D50 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		14E89F4C26C7837400479D50 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		14E89F5126C9D01600479D50 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		25964DE8F99B0FE5CAAE12CE /* Pods_Rapptr_iOS_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rapptr_iOS_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C2E9BDB0A5E4B8AE298FD4 /* Pods-Rapptr iOS Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rapptr iOS Test.debug.xcconfig"; path = "Target Support Files/Pods-Rapptr iOS Test/Pods-Rapptr iOS Test.debug.xcconfig"; sourceTree = "<group>"; };
 		E9414DB326C45CF300512A71 /* Rapptr iOS Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rapptr iOS Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E9414DCA26C45EC900512A71 /* Message.swift */,
+				14E89F5126C9D01600479D50 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				E9414DE826C4618900512A71 /* MenuViewController.swift in Sources */,
 				14E89F4D26C7837400479D50 /* TextFieldWithPadding.swift in Sources */,
 				E9414DCB26C45EC900512A71 /* Message.swift in Sources */,
+				14E89F5226C9D01600479D50 /* LoginResponse.swift in Sources */,
 				E9414DEA26C468D700512A71 /* SceneDelegate.swift in Sources */,
 				14E89F4A26C7831700479D50 /* UIView+Extensions.swift in Sources */,
 				14E89F4526C782DE00479D50 /* DraggableImage.swift in Sources */,

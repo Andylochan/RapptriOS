@@ -22,13 +22,13 @@ import Foundation
  *   password - Test123
  *
 */
-
+// Query string to use (Keeps returning error for some reason)
 // http://dev.rapptrlabs.com/Tests/scripts/login.php?email=info@rapptrlabs.com&password=Test123
 
 class LoginClient {
     static let shared = LoginClient()
     
-    func login(email: String, password: String, completion: @escaping (String) -> Void, error errorHandler: @escaping (String?) -> Void) {
+    func login(email: String, password: String, completion: @escaping (String, String) -> Void, error errorHandler: @escaping (String?) -> Void) {
         let start = CFAbsoluteTimeGetCurrent()
         
         let url = String(format: "http://dev.rapptrlabs.com/Tests/scripts/login.php")
@@ -52,14 +52,16 @@ class LoginClient {
             }
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("json:", json)
+                    let jsonData = try JSONDecoder().decode(LoginResponse.self, from: data)
+                    let message = jsonData.message
+                    print("Json message:", message)
                     
                     let diff = CFAbsoluteTimeGetCurrent() - start
                     let diffToMilli = diff * 1000
                     let diffFormated = String(format: "%.0f", diffToMilli)
+                    print("Request took \(diffFormated) ms")
                     
-                    completion("\(diffFormated)")
+                    completion(diffFormated, message)
                 } catch {
                     errorHandler(error.localizedDescription)
                 }

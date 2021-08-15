@@ -26,12 +26,15 @@ class LoginViewController: UIViewController {
      *
      * 7) When login is successful, tapping 'OK' in the UIAlertController should bring you back to the main menu.
      **/
-    @IBOutlet weak var userTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    
     
     // MARK: - Properties
     private var client: LoginClient?
+    
+    // MARK: - Outlets
+    @IBOutlet weak var userTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -54,9 +57,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didPressLoginButton(_ sender: Any) {
-        LoginClient.shared.login(email: userTextfield.text ?? "", password: passwordTextfield.text ?? "") { (Response) in
+        LoginClient.shared.login(email: userTextfield.text ?? "", password: passwordTextfield.text ?? "") { (Response, Message)  in
             DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Login Complete", message: "Request took \(Response) ms", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Login Complete", message: "\(Message)\n Request took \(Response) ms", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     self.navigationController?.popToRootViewController(animated: true)
                 }))
@@ -76,7 +79,7 @@ class LoginViewController: UIViewController {
         if userTextfield.text == "" || passwordTextfield.text == "" {
             loginButton.isEnabled = false;
             loginButton.layer.opacity = 0.6
-        }else{
+        } else {
             loginButton.isEnabled = true;
             loginButton.layer.opacity = 1.0
         }
