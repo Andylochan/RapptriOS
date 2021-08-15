@@ -1,5 +1,5 @@
 # Rapptr Labs 
-Code Test - Swift app with chat, login, and animation features.  
+Code test - Swift app with chat, login, and animation features.  
 
 ## How to use
 Please open and run the ```Rapptr IOS Test.xcworkspace``` file to view the project. 
@@ -14,7 +14,7 @@ Please open and run the ```Rapptr IOS Test.xcworkspace``` file to view the proje
 
 ### Dependencies
 
-- [SDWebImageSwiftUI](https://github.com/SDWebImage/SDWebImageSwiftUI)
+- [SDWebImage](https://github.com/SDWebImage/SDWebImage)
 
 ### To reinstall pods on Apple M1*
 
