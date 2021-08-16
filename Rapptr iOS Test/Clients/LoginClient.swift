@@ -22,7 +22,7 @@ import Foundation
  *   password - Test123
  *
 */
-// Query string to use (Keeps returning error for some reason)
+// Query string to use (Keeps returning 'invalid parameters' for some reason)
 // http://dev.rapptrlabs.com/Tests/scripts/login.php?email=info@rapptrlabs.com&password=Test123
 
 class LoginClient {

@@ -18,6 +18,7 @@ class ChatClient {
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             if let error = err {
                 print("Error: \(error)")
+                errorHandler(error.localizedDescription)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
